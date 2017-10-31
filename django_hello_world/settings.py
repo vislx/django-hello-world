@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+from . import local_setting as LOCAL_SETTING
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -73,13 +73,31 @@ WSGI_APPLICATION = 'django_hello_world.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     },
+#     'mysql': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': LOCAL_SETTING.DATABASE_NAME,
+#         'USER': LOCAL_SETTING.USERNAME,
+#         'PASSWORD': LOCAL_SETTING.PASSWORD,
+#         'HOST': LOCAL_SETTING.HOST,
+#         'PORT': LOCAL_SETTING.PORT
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': LOCAL_SETTING.DATABASE_NAME,
+        'USER': LOCAL_SETTING.USERNAME,
+        'PASSWORD': LOCAL_SETTING.PASSWORD,
+        'HOST': LOCAL_SETTING.HOST,
+        'PORT': LOCAL_SETTING.PORT
+    },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -105,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Singapore'
 
 USE_I18N = True
 

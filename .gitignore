@@ -12,6 +12,9 @@ __pycache__/
 # Local DB
 db.sqlite3
 
+# Local Setting
+django_hello_world/local_setting.py
+
 # C extensions
 *.so
 
