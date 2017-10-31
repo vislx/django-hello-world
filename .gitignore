@@ -11,6 +11,7 @@ __pycache__/
 
 # Local DB
 db.sqlite3
+polls/migrations/
 
 # Local Setting
 django_hello_world/local_setting.py
